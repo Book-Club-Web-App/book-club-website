@@ -1,0 +1,775 @@
+/* =========================
+   BASIC PAGE SETTINGS
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7eeee;
+    color: #171b3d;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    border-bottom: 1px solid #d8dbe5;
+
+    background-color: #eef0f7;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+/* Logo */
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #171b3d;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #118a8b;
+}
+
+
+/* Theme button */
+
+#themeButton {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d8dbe5;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+
+
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 70px 7%;
+
+    gap: 50px;
+}
+
+
+/* Left side */
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-family: Georgia, serif;
+
+    font-size: 76px;
+
+    line-height: 0.95;
+
+    margin: 0 0 30px;
+
+    color: #171b3d;
+}
+
+.hero-text p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #617092;
+
+    margin-bottom: 25px;
+}
+
+
+/* Buttons */
+
+.hero button {
+    padding: 16px 25px;
+
+    border-radius: 30px;
+
+    border: none;
+
+    background-color: #118a8b;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-right: 10px;
+}
+
+.hero button:hover {
+    background-color: #0b7071;
+}
+
+
+/* Second button */
+
+.hero .outline-button {
+    background-color: transparent;
+
+    color: #171b3d;
+
+    border: 2px solid #171b3d;
+}
+
+.hero .outline-button:hover {
+    background-color: #171b3d;
+
+    color: white;
+}
+
+
+/* =========================
+   FEATURED BOOK
+========================= */
+
+.featured-book {
+    width: 300px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.book-cover {
+    width: 235px;
+    height: 340px;
+
+    background-color: #117c7e;
+
+    color: white;
+
+    border-radius: 8px;
+
+    padding: 35px 25px;
+
+    box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.4s;
+}
+
+.book-cover:hover {
+    transform: rotateY(15deg) translateY(-10px);
+}
+
+.book-cover p {
+    font-size: 28px;
+
+    font-family: Georgia, serif;
+
+    font-weight: bold;
+
+    margin-top: 55px;
+}
+
+.book-cover h2 {
+    font-size: 40px;
+
+    font-family: Georgia, serif;
+
+    margin-top: -20px;
+}
+
+.book-cover small {
+    display: block;
+
+    margin-top: 50px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+
+
+/* =========================
+   BOOKSHELF SECTION
+========================= */
+
+.bookshelf {
+    padding: 70px 7%;
+    min-height: 650px;
+}
+
+.bookshelf h2 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    margin: 0 0 10px;
+}
+
+.bookshelf > p {
+    color: #617092;
+    font-size: 17px;
+}
+
+
+/* =========================
+   CATEGORY BUTTONS
+========================= */
+
+.categories {
+    display: flex;
+    gap: 10px;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+.categories button {
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    border: 1px solid #d8dbe5;
+
+    background-color: white;
+
+    color: #171b3d;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.categories button:hover {
+    background-color: #171b3d;
+    color: white;
+}
+
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+#searchBox {
+    width: 280px;
+
+    padding: 13px 18px;
+
+    border-radius: 25px;
+
+    border: 1px solid #d8dbe5;
+
+    outline: none;
+
+    font-size: 15px;
+
+    float: right;
+
+    margin-top: -65px;
+}
+
+#searchBox:focus {
+    border-color: #118a8b;
+}
+
+
+/* =========================
+   SAVED BOOK COUNT
+========================= */
+
+#savedCount {
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BOOK CONTAINER
+========================= */
+
+.book-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================
+   BOOK CARD
+========================= */
+
+.book-card {
+    background-color: white;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid #dfe2eb;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Book cover */
+
+.book-image {
+    height: 230px;
+
+    background-color: #117c7e;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    text-align: center;
+}
+
+.book-image h3 {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+}
+
+
+/* Book title */
+
+.book-card > h3 {
+    font-family: Georgia, serif;
+
+    margin-bottom: 5px;
+}
+
+.book-card > p {
+    color: #617092;
+
+    margin-top: 5px;
+}
+
+
+/* Save button */
+
+.book-card button {
+    padding: 9px 16px;
+
+    border-radius: 20px;
+
+    border: 1px solid #171b3d;
+
+    background-color: white;
+
+    cursor: pointer;
+}
+
+.book-card button:hover {
+    background-color: #171b3d;
+
+    color: white;
+}
+
+
+
+/* =========================
+   NOW READING
+========================= */
+
+.reading {
+    background-color: #191d42;
+
+    color: white;
+
+    padding: 70px 7%;
+
+    min-height: 380px;
+}
+
+.reading h2 {
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    margin-bottom: 10px;
+}
+
+.reading > p {
+    color: #c3c8df;
+
+    font-size: 17px;
+}
+
+
+/* Progress bar */
+
+.progress-bar {
+    width: 100%;
+
+    height: 15px;
+
+    background-color: #4c516f;
+
+    border-radius: 20px;
+
+    margin-top: 40px;
+
+    overflow: hidden;
+}
+
+#progress {
+    width: 0%;
+
+    height: 100%;
+
+    background-color: #118a8b;
+
+    border-radius: 20px;
+
+    transition: width 0.4s;
+}
+
+
+/* Chapters */
+
+.chapters {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.chapters button {
+    padding: 10px 16px;
+
+    border-radius: 20px;
+
+    border: none;
+
+    background-color: white;
+
+    color: #191d42;
+
+    cursor: pointer;
+}
+
+.chapters button:hover {
+    background-color: #118a8b;
+
+    color: white;
+}
+
+
+
+/* =========================
+   MEETINGS
+========================= */
+
+.meetings {
+    padding: 70px 7%;
+
+    min-height: 500px;
+}
+
+.meetings h2 {
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    margin-bottom: 10px;
+}
+
+.meetings > p {
+    color: #617092;
+
+    font-size: 17px;
+}
+
+
+/* Meeting cards */
+
+.meeting-card {
+    background-color: white;
+
+    border: 1px solid #dfe2eb;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    margin-top: 25px;
+
+    max-width: 600px;
+
+    transition: transform 0.3s;
+}
+
+.meeting-card:hover {
+    transform: translateX(8px);
+}
+
+.meeting-card h3 {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+}
+
+.meeting-card p {
+    color: #617092;
+}
+
+.meeting-card button {
+    background-color: #118a8b;
+
+    color: white;
+
+    border: none;
+
+    padding: 11px 25px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+}
+
+.meeting-card button:hover {
+    background-color: #0b7071;
+}
+
+
+
+/* =========================
+   JOIN SECTION
+========================= */
+
+.join {
+    padding: 70px 12%;
+
+    min-height: 600px;
+}
+
+.join h2 {
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    margin-bottom: 10px;
+}
+
+.join > p {
+    color: #617092;
+
+    font-size: 17px;
+}
+
+
+/* Form */
+
+form {
+    width: 470px;
+
+    margin-top: 30px;
+}
+
+form label {
+    display: block;
+
+    margin-top: 25px;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #d8dbe5;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+form input:focus {
+    border-color: #118a8b;
+}
+
+form button {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background-color: #118a8b;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0b7071;
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 35px 7%;
+
+    border-top: 1px solid #d8dbe5;
+
+    color: #617092;
+}
+
+footer a {
+    color: #617092;
+}
+
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    background-color: #11152f;
+    color: white;
+}
+
+body.dark-mode header {
+    background-color: #11152f;
+    border-color: #303555;
+}
+
+body.dark-mode nav a {
+    color: white;
+}
+
+body.dark-mode .bookshelf,
+body.dark-mode .meetings,
+body.dark-mode .join {
+    background-color: #11152f;
+    color: white;
+}
+
+body.dark-mode .book-card,
+body.dark-mode .meeting-card {
+    background-color: #202544;
+    border-color: #383d60;
+    color: white;
+}
+
+body.dark-mode .book-card > p,
+body.dark-mode .meeting-card p,
+body.dark-mode .bookshelf > p,
+body.dark-mode .meetings > p,
+body.dark-mode .join > p {
+    color: #c3c8df;
+}
+
+body.dark-mode #searchBox {
+    background-color: #202544;
+    color: white;
+}
+
+body.dark-mode .categories button {
+    background-color: #202544;
+    color: white;
+    border-color: #383d60;
+}
+
+body.dark-mode form input {
+    background-color: #202544;
+    color: white;
+    border-color: #383d60;
+}

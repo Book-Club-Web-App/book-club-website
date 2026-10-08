@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Page Turners - Book Club</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="logo">
+            Page Turners
+        </div>
+
+        <nav>
+            <a href="#bookshelf">Bookshelf</a>
+            <a href="#reading">Now Reading</a>
+            <a href="#meetings">Meetings</a>
+            <a href="#join">Join</a>
+
+            <button id="themeButton">◐</button>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Read together.<br>
+                Argue kindly.
+            </h1>
+
+            <p>
+                A neighbourhood book club that picks one book a month,
+                meets on the first Saturday, and always has tea.
+                Newcomers welcome, finished or not.
+            </p>
+
+            <button onclick="goToJoin()">
+                Join the club
+            </button>
+
+            <button class="outline-button" onclick="goToBookshelf()">
+                Browse the shelf
+            </button>
+
+        </div>
+
+
+        <div class="featured-book">
+
+            <div class="book-cover">
+
+                <p>This month's</p>
+                <h2>pick</h2>
+
+                <small>
+                    Drag or move your mouse
+                    to turn it.
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BOOKSHELF ================= -->
+
+    <section id="bookshelf" class="bookshelf">
+
+        <h2>The club bookshelf</h2>
+
+        <p>
+            Hover or tap a cover to see the details.
+            Save the ones you want to read.
+        </p>
+
+
+        <!-- Category buttons -->
+
+        <div class="categories">
+
+            <button onclick="filterBooks('all')">
+                All
+            </button>
+
+            <button onclick="filterBooks('fiction')">
+                Fiction
+            </button>
+
+            <button onclick="filterBooks('mystery')">
+                Mystery
+            </button>
+
+            <button onclick="filterBooks('scifi')">
+                Sci-fi
+            </button>
+
+            <button onclick="filterBooks('nonfiction')">
+                Non-fiction
+            </button>
+
+        </div>
+
+
+        <!-- Search -->
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search title or author"
+            onkeyup="searchBooks()"
+        >
+
+
+        <p id="savedCount">
+            Your reading list: 0 saved
+        </p>
+
+
+        <!-- Books -->
+
+        <div class="book-container">
+
+            <div class="book-card fiction">
+
+                <div class="book-image">
+                    <h3>The Great Gatsby</h3>
+                </div>
+
+                <h3>The Great Gatsby</h3>
+                <p>F. Scott Fitzgerald</p>
+
+                <button onclick="saveBook(this)">
+                    ♡ Save
+                </button>
+
+            </div>
+
+
+            <div class="book-card mystery">
+
+                <div class="book-image">
+                    <h3>Gone Girl</h3>
+                </div>
+
+                <h3>Gone Girl</h3>
+                <p>Gillian Flynn</p>
+
+                <button onclick="saveBook(this)">
+                    ♡ Save
+                </button>
+
+            </div>
+
+
+            <div class="book-card scifi">
+
+                <div class="book-image">
+                    <h3>Dune</h3>
+                </div>
+
+                <h3>Dune</h3>
+                <p>Frank Herbert</p>
+
+                <button onclick="saveBook(this)">
+                    ♡ Save
+                </button>
+
+            </div>
+
+
+            <div class="book-card nonfiction">
+
+                <div class="book-image">
+                    <h3>Atomic Habits</h3>
+                </div>
+
+                <h3>Atomic Habits</h3>
+                <p>James Clear</p>
+
+                <button onclick="saveBook(this)">
+                    ♡ Save
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NOW READING ================= -->
+
+    <section id="reading" class="reading">
+
+        <h2>Now reading: The Hobbit</h2>
+
+        <p>
+            J.R.R. Tolkien.
+            Tap each chapter you've finished to track your progress.
+        </p>
+
+
+        <div class="progress-bar">
+
+            <div id="progress"></div>
+
+        </div>
+
+        <p id="progressText">
+            0% complete
+        </p>
+
+
+        <div class="chapters">
+
+            <button onclick="completeChapter(1)">
+                Chapter 1
+            </button>
+
+            <button onclick="completeChapter(2)">
+                Chapter 2
+            </button>
+
+            <button onclick="completeChapter(3)">
+                Chapter 3
+            </button>
+
+            <button onclick="completeChapter(4)">
+                Chapter 4
+            </button>
+
+            <button onclick="completeChapter(5)">
+                Chapter 5
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MEETINGS ================= -->
+
+    <section id="meetings" class="meetings">
+
+        <h2>Upcoming meetings</h2>
+
+        <p>
+            RSVP so we know how many chairs to set out.
+        </p>
+
+
+        <div class="meeting-card">
+
+            <h3>October Book Discussion</h3>
+
+            <p>
+                📅 October 12
+            </p>
+
+            <p>
+                🕓 4:00 PM
+            </p>
+
+            <button onclick="rsvp()">
+                RSVP
+            </button>
+
+        </div>
+
+
+        <div class="meeting-card">
+
+            <h3>The Hobbit Discussion</h3>
+
+            <p>
+                📅 October 26
+            </p>
+
+            <p>
+                🕓 4:00 PM
+            </p>
+
+            <button onclick="rsvp()">
+                RSVP
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= JOIN ================= -->
+
+    <section id="join" class="join">
+
+        <h2>Join the club</h2>
+
+        <p>
+            Make a free account to save books,
+            track chapters and RSVP.
+        </p>
+
+
+        <form onsubmit="createAccount(event)">
+
+            <label>
+                Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+            >
+
+
+            <label>
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+            >
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+            >
+
+
+            <button type="submit">
+                Create my account
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <a href="#home">
+            Back to top
+        </a>
+
+        <p>
+            First Saturday, 4 pm
+        </p>
+
+        <p>
+            hello@pageturners.example
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
